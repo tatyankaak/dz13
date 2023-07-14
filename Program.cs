@@ -4,14 +4,15 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Введите число: ");
-        string input = Console.ReadLine();
-
-        if (input.Length >= 3)
+        int number = Input("Введите число: ");
+        number = Math.Ads(number);
+        if (number > 99)
         {
-            int number = int.Parse(input);
-            int thirdDigit = (number / 100) % 10;
-            Console.WriteLine("Третья цифра числа: " + thirdDigit);
+            while(number > 999)
+            {
+                number /= 10;
+            } 
+            Console.WriteLine($"Третья цифра числа: {number % 10}");
         }
         else
         {
